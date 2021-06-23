@@ -10,14 +10,17 @@ class Vector:
             self.nextValue = Vector(key)
         return self
 
-    def inorder(self):
-        if self:
-            print(self.value)
-            self.nextValue.inorder()
+    def inorder(self,test):
+        if test:
+            print(test.value)
+            test.inorder(test.nextValue)
+        else:
+            print('done')
 
 
 testing = Vector(1)
 
 testing.insertValue(12)
 testing.nextValue.insertValue(122)
-testing.inorder()
+testing.nextValue.nextValue.insertValue(1500)
+testing.inorder(testing)
